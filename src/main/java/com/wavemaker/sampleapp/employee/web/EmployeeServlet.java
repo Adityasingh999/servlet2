@@ -25,24 +25,27 @@ public class EmployeeServlet extends HttpServlet {
         response.getWriter().write(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(users));
     }
 
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Employee user = objectMapper.readValue(request.getReader(), Employee.class);
-        employeeManager.addUser(user);
-        /*try {
+        try {
             employeeManager.addUser(user);
-        } catch (U    e) {
-            response.setStatus(400);
-            response.getWriter().write("User ");
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             response.setStatus(500);
             response.getWriter().write("Internal server error");
-        }*/
+        }
     }
 
     @Override
     protected final void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        employeeManager.deleteUser(Integer.valueOf(req.getParameter("empId")));
+        try {
+            employeeManager.deleteUser(Integer.valueOf(req.getParameter("empId")));
+        }catch (Exception e) {
+            resp.setStatus(500);
+            resp.getWriter().write("Internal server error");
+        }
     }
 
 }
