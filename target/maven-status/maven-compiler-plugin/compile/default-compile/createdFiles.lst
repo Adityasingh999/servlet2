@@ -1,0 +1,9 @@
+com\wavemaker\employee\factory\PersistenceType.class
+com\wavemaker\employee\factory\EmployeeInstanceFactory$1.class
+com\wavemaker\employee\factory\EmployeeInstanceFactory.class
+com\wavemaker\sampleapp\employee\database\DatabaseConnection.class
+com\wavemaker\sampleapp\employee\web\EmployeeServlet.class
+com\wavemaker\sampleapp\employee\inmemory\InMemoryEmployeeManager.class
+com\wavemaker\sampleapp\employee\EmployeeManager.class
+com\wavemaker\sampleapp\employee\database\DatabaseEmployeeManager.class
+com\wavemaker\sampleapp\employee\models\Employee.class
